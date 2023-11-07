@@ -1,0 +1,71 @@
+{% extends 'base.html' %}
+
+{% block title %}
+    HomePage
+{% endblock %}
+
+{% block content %}
+    <div class="container-fluid mt-3">
+        <div class="row">
+            <div id='products' class="col-lg-9 mx-auto">
+                <div class="row mx-auto">
+                    <div class="card mx-auto mb-3" id={{ product.id }} style="width: 18rem;
+                    ">
+                    <img class="card-img-top"
+                         src="https://rukminim2.flixcart.com/image/832/832/xif0q/shirt/r/9/n/xxl-patta-14-jai-textiles-original-imagn2fzpawqukgq.jpeg?q=70"
+                         alt="Card image cap" width="200"
+                         height="300">
+                    <div class="card-body">
+                        <p class="card-title">shirt</p>
+                        <hr>
+                        <p class="card-text"><b>200zl</b></p>
+
+                    </div>
+                    <hr>
+                    <div class="card mx-auto mb-3" id={{ product.id }} style="width: 18rem;
+                    ">
+                    <img class="card-img-top"
+                         src="https://rukminim2.flixcart.com/image/832/832/xif0q/shirt/s/r/u/l-tbh-insta-bl-the-bear-house-original-imagqpf4ka6cmnfy.jpeg?q=70"
+                         alt="Card image cap" width="200"
+                         height="300">
+                    <div class="card-body">
+                        <p class="card-title">skirt</p>
+                        <hr>
+                        <p class="card-text"><b>80 zl</b></p>
+
+                    </div>
+                </div>
+            </div>
+            <div id='products' class="col-lg-9 mx-auto">
+                <div class="row mx-auto">
+                    <div class="card mx-auto mb-3" id={{ product.id }} style="width: 18rem;
+                    ">
+                    <img class="card-img-top"
+                         src="https://rukminim2.flixcart.com/image/832/832/xif0q/skirt/x/n/j/free-1-df-6-layer-hoopskirt-dollfashion-original-imagf5nvpzmzcfn7-bb.jpeg?q=70"
+                         alt="Card image cap" width="200"
+                         height="300">
+                    <div class="card-body">
+                        <p class="card-title">men's shirt</p>
+                        <hr>
+                        <p class="card-text"><b>80 zl</b></p>
+
+                    </div>
+                    <hr>
+                    <div class="card mx-auto mb-3" id={{ product.id }} style="width:500px">
+                    <img class="card-img-top"
+                         src="https://rukminim2.flixcart.com/image/832/832/xif0q/skirt/8/x/t/l-midi-plat-otabu-original-imag4umh4yuwzds5-bb.jpeg?q=70"
+                         alt="Card image cap" width="200"
+                         height="300">
+                    <div class="card-body">
+                        <p class="card-title">skirt</p>
+                        <hr>
+                        <p class="card-text"><b>70 zl</b></p>
+
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </div>
+
+{% endblock %}

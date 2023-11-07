@@ -1,0 +1,25 @@
+{% extends 'base.html' %}
+
+{% block content %}
+    <div class="container">
+        <div class="p-4 m-4">
+            <div class="col-lg-5 mt-4 border mb-4 mx-auto rounded pt-4">
+                <div class="text-center col">
+                    <img
+                            src="https://img.freepik.com/premium-vector/kids-drawing-cartoon-vector-illustration-funny-sharpener-eraser-pencil-icon-isolated_760559-1020.jpg"
+                            alt=""
+                            class="" style="height: 150px;"/>
+                    <hr>
+                    <h3>Edit Products</h3>
+                    <hr>
+                    <form method="post">
+                        {% csrf_token %}
+                        {{ form.as_p }}
+                        <button class="btn btn-sm btn-info" type="submit">Update Product</button>
+                    </form>
+                    <a href="{% url 'products' %}">Back to Products</a>
+                </div>
+            </div>
+        </div>
+    </div>
+{% endblock %}

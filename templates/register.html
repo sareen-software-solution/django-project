@@ -1,0 +1,26 @@
+{% extends 'base.html' %}
+
+{% block content %}
+    <div class="container mt-4">
+        <div class="p-4 m-4">
+            <div class="col-lg-5 rounded mx-auto border pt-4">
+                <div class="text-center col">
+                    <img
+                            src="https://upload.wikimedia.org/wikipedia/commons/thumb/c/c8/Shopping_cart_with_food_clip_art_2.svg/307px-Shopping_cart_with_food_clip_art_2.svg.png"
+                            alt=""
+                            class="" style="height: 150px;">
+                    <div class="display-8">Create An Account</div>
+                    <hr>
+                </div>
+                <h3 hidden class="alert alert-light border rounded">Create An Account</h3>
+                <div class="form-group">
+                    <form method="post">
+                        {% csrf_token %}
+                        {{ form.as_p }}
+                        <button class="btn btn-sm btn-info" type="submit">Register</button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+{% endblock %}

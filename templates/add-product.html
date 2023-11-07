@@ -1,0 +1,32 @@
+{% extends 'base.html' %}
+
+{% block title %}
+    add products
+{% endblock %}
+
+{% block content %}
+    <div class="container">
+        <div class="p-4 m-4">
+            <div class="col-lg-4 mt-4 border mb-4 mx-auto rounded pt-4">
+                <div class="text-center col">
+                    <img
+                            src="https://www.clker.com/cliparts/Z/R/z/s/i/j/plus-sign-md.png"
+                            alt=""
+                            class="" style="height: 150px;"/>
+                    <hr>
+                    <h3>Add Products</h3>
+                    <hr>
+                    <form method="post">
+                        {% csrf_token %}
+
+                        <input class="form-group  form-control-sm form-control"  type="text" name="name" placeholder="name">
+                        <input class="form-group  form-control-sm form-control" type="text" name="description" placeholder="description">
+                        <input class="form-group  form-control-sm form-control" type="number" name="price" placeholder="price">
+                        <input class="btn btn-sm btn-info col-lg-4" type="submit">
+                    </form>
+                    <hr>
+                </div>
+            </div>
+        </div>
+    </div>
+{% endblock %}

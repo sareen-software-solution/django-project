@@ -1,0 +1,38 @@
+{% extends 'base.html' %}
+
+{% block title %}
+    search
+{% endblock %}
+
+{% block content %}
+
+
+    <div class="container">
+        <div class="p-4 m-4">
+            <div class="col-lg-5 mt-4 border mb-4 mx-auto rounded pt-4">
+                <div class="text-center col">
+
+                    <h3>Product List</h3>
+
+                    <form method="get">
+                        <input type="text" name="search" placeholder="Search products" value="{{ search_query }}">
+                        <button class="btn btn-sm btn-info" type="submit">Search</button>
+                    </form>
+
+
+
+                    {% if search_results %}
+                        {% for product in search_results %}
+                            <strong>{{ product.name }}</strong><br>
+                            Description: {{ product.description }}<br>
+                        {% endfor %}
+
+                    {% else %}
+                        <p>No products found.</p>
+                    {% endif %}
+
+                </div>
+            </div>
+        </div>
+    </div>
+{% endblock %}

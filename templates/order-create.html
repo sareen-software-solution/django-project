@@ -1,0 +1,48 @@
+{% extends 'base.html' %}
+
+{% block content %}
+    <div class="container">
+        <div class="border rounded p-4 m-4">
+            <p class="display-4 pl-4 ml-4" style="background-color:darkgray;text-align: center">Your Orders</p>
+            <hr>
+            <table class="table">
+                <thead>
+                <tr>
+                    <th>Sno.</th>
+                    {#                    <th>Image</th>#}
+                    <th>Clients name</th>
+                    <th>Product</th>
+                    <th>Quantity</th>
+                    <th>Status</th>
+                </tr>
+                </thead>
+
+                {% if orders %}
+                    <h3 style="text-align: center; background-color: yellow">Your Pending Orders:</h3>
+                    <tbody>
+
+                    {% for order in orders %}
+                        <tr>
+                            <td>{{ order.id }}</td>
+                            <td>{{ order.client_name.username }}</td>
+                            {% for order_item in order.orderitem_set.all %}
+                                <td>{{ order_item.product.name }}</td>
+                                <td>{{ order_item.quantity }}</td>
+                            {% endfor %}
+                            {% if order.status %}
+                                <td><small class="badge badge-warning">Pending</small></td>
+                            {% else %}
+                                <td><small class="badge badge-success">Completed</small></td>
+                            {% endif %}
+                        </tr>
+                    {% endfor %}
+                    </tbody>
+                {% else %}
+                    <h3 style="text-align: center; background-color: orange">No pending orders.</h3>
+                {% endif %}
+            </table>
+
+            <a href="{% url 'products' %}"><- Back to Products</a>
+        </div>
+    </div>
+{% endblock %}
